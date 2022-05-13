@@ -1,0 +1,28 @@
+{
+    "stats": {
+        "curr": {
+            "hunger": 0,
+            "int": 250,
+            "happyness": 0,
+            "hygiene": 750,
+            "activity": 1000,
+            "energy": 800
+        },
+        "frust": 950,
+        "weight": 1,
+        "age": 0,
+        "name": "",
+        "illness": false
+    },
+    "phase": "baby",
+    "color": 0,
+    "max_stats": 1000,
+    "time": 0,
+    "day": 120,
+    "difficulty": 1,
+    "state": "idle",
+    "afk": false,
+    "queue": [],
+    "bot": false,
+    "frust": -5
+}

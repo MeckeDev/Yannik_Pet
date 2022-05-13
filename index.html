@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- Import Scripts -->
+    <script src="main.js"></script>
+
+    <title>Pet</title>
+</head>
+<body class="bg-dark user-select-none" onload="load_image()">
+
+    <div id="get_login" class="bg-danger p-3 rounded w-100">
+        <div style="background-color: coral;" class="w-100 rounded p-1">
+            <div class="mb-3 row w-100 mx-auto mt-2">
+                <label for="staticEmail" class="col-sm-2 col-form-label">Username: </label>
+                <div class="col-sm-10">
+                <span style="width: 42%;" class="input-group-text float-left" id="basic-addon3">https://www.twitch.tv/</span>
+                <input style="width: 55%" type="text" class="form-control float-left" id="username" placeholder="Mecke_Dev">
+                </div>
+            </div>
+
+            <div class="mb-3 row w-100 mx-auto">
+                <label for="inputPassword" class="col-sm-2 col-form-label">OAUTH: </label>
+                <div class="col-sm-10">
+
+                <span style="width: 12%;" class="input-group-text float-left" id="basic-addon3">oauth:</span>
+                <input style="width: 80%" type="password" class="form-control" id="oauth" placeholder="oauth:1234567890">
+                </div>
+            </div> 
+        </div>
+
+        <div style="background-color: coral;" class="w-75 mx-auto mt-3 rounded pb-2">
+            <div class="w-75 mx-auto text-center mt-1"> Please click on your preferred Language </div>
+            <div id="german" style="background-color: black; color: gray; margin-top: 2%; margin-right: 2%; margin-left: 23%;" class="btn w-25" onclick="active(this)">German</div>
+            <div id="english" style="background-color: black; color: gray; margin-top: 2%;" class="btn w-25" onclick="active(this)">English</div>
+        </div>
+
+            <div class="btn btn-warning mt-3 mx-auto w-75" onclick="save_login()">LOGIN</div>
+        </div>
+        
+    </div>
+    
+
+    <div id="content" style="min-height: 85vh;" class="p-2 bg-secondary">
+        <div style="min-height:85vh; color:white;" class="w-100 rounded bg-dark p-2 user-select-none">
+
+            <div id="stats" class="w-75 bg-light rounded mx-auto text-center">
+                <div id="hunger" style="width: 30%; margin-top: 2vh;" class="float-left ml-2 bg-secondary rounded"></div>
+                <div id="int" style="width: 30%; margin-top: 2vh;" class="float-left ml-2 bg-secondary rounded"></div>
+                <div id="happyness" style="width: 30%; margin-top: 2vh;" class="float-left ml-2 bg-secondary rounded"></div>
+                <div id="hygiene" style="width: 30%; margin-top: 2vh;" class="float-left ml-2 bg-secondary rounded"></div>
+                <div id="activity" style="width: 30%; margin-top: 2vh;" class="float-left ml-2 bg-secondary rounded"></div>
+                <div id="energy" style="width: 30%; margin-top: 2vh;" class="float-left ml-2 bg-secondary rounded"></div>
+            </div>
+
+            <div class="mx-auto mt-5" style="width: 30%;" id="cur_image">
+
+            </div>
+        
+        </div>
+
+    </div>
+
+    <div id="bot_status">  </div>
+
+    <p style="color:#fff;" class="text-center mt-3"> This Tool was created by Mecke_Dev <button type="button" onclick="open_link('https://steamcommunity.com/id/mecke_dev/')" class="btn btn-sm float-right mb-1 ml-2 mr-4">Steam</button> <button type="button" onclick="open_link('https://discord.gg/bxyaN3J')" class="btn btn-sm float-right mb-1 mx-2">Discord</button> <button type="button" onclick="open_link('https://github.com/MeckeDev')" class="btn btn-sm float-right mb-1 mx-2">GitHub</button> </p>
+</body>
+
+<script>
+
+var secrets = require('./secrets.json')
+var infos = require('./infos.json')
+
+if(secrets["username"] && secrets["oauth"]){
+    document.getElementById("get_login").style.display = "none"
+}
+else{
+    document.getElementById("content").style.display = "none"
+}
+
+if(infos["bot"]){
+    document.getElementById("bot_status").innerHTML = '<div class="btn btn-success"> Bot ✔ </div>'
+}
+if(!infos["bot"]){
+    document.getElementById("bot_status").innerHTML = '<div class="btn btn-danger"> Bot ❌ </div> '
+}
+
+</script>
+
+</html>

@@ -1,0 +1,40 @@
+Werte:
+- int maxHunger, maxIntelligenz, maxFreude, maxHygiene, maxAktivität, maxEnergie = 100
+- int aktHunger, aktIntelligenz, ... = 100
+- int time = live Zeit
+- int Tageszyklus = 120s
+- int maxFrust = 1000
+- int aktFrust = 1000
+- int Alter, Gewicht
+- string Name
+- "Animation" currentState
+- float Schwierigkeit =1,0
+
+Backend-Funktion, die...
+- Zeit zählt in festen Intervallen
+- basierend auf vergangener Zeit Werte reduziert (alle X s Wert Y -=1) und Alter erhöht
+(- bei bestimmtem Alter Entwicklung auslöst)
+- Werteverminderung mit Schwierigkeitsfaktor muktipliziert
+- Werte verändert und speichert
+- Deckis Animationen abspielt, basierend auf currentState
+- Werte, sobald sie unter Schwellenwert sind, visuell farbig darstellt (>50%=gelb, >25%=rot)
+- versteckten Wert Frust erhöht oder senkt, basierend auf rot, gelb und grün angezeigten Werte
+
+Frust: (versteckter Wert)
+- Start bei 1000
+- Sinkt pro Alter (wenn Wert Alter sich um eins erhöht) um 20 bei rotem und 10 bei gelbem Wert mal Schwierigkeitsgrad
+- maximal Verlust= 120 bei 6xroter Wert
+- Erhöht pro Medizineinsatz, wenn Decki nicht krank ist, Frust um 50
+
+Commands-Beispiel:
+- !eat 1 -> Wert Hunger erhöhen, Wert Gewicht erhöhen, Animation "Burger essen" (2=Hähnchen, 3=Salat) abspielen, veränderte Werte visuell anpassen 
+- Kanalpunkte 100 "Decki Schule" -> Animation "Buch lesen" abspielen, Wert Intelligenz erhöhen, Wert Freude senken +
+
+
+### 
+Channelpoints beschleunigen Schlüpfzeit
+Startsprache OS Abhängige Vorauswahl
+Optionen für Login und Sprachen
+
+
+Yannik Fehlercounter

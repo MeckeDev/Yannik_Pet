@@ -1,0 +1,22 @@
+{
+ "de" : {
+    "stats" : {
+        "hunger" : "Hunger",
+        "int" : "Intelligenz",
+        "happyness" : "Freude",
+        "hygiene" : "Hygiene",
+        "activity" : "Aktivität",
+        "energy" : "Energie"
+    }
+ },
+ "en" : {
+    "stats" : {
+        "hunger" : "Hunger",
+        "int" : "Intelligence",
+        "happyness" : "Happyness",
+        "hygiene" : "Hygiene",
+        "activity" : "Activity",
+        "energy" : "Energy"
+    }
+ }   
+}
